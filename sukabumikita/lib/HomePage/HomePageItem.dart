@@ -10,7 +10,7 @@ class HomePageItem extends StatelessWidget {
         Column(
           children: [
             Text(
-              "Peta Sukabumi",
+              "Peta Tempat",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -24,7 +24,7 @@ class HomePageItem extends StatelessWidget {
                 height: 370,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Colors.green,
+                  color: Colors.grey[350],
                   // image: DecorationImage(
                   //     image: AssetImage('assets/images/azizi.jpeg')),
                 ),
@@ -49,7 +49,7 @@ class HomePageItem extends StatelessWidget {
                 height: 370,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Colors.green,
+                  color: Colors.grey[350],
                   // image: DecorationImage(
                   //     image: AssetImage('assets/images/azizi.jpeg')),
                 ),

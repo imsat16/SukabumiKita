@@ -12,23 +12,23 @@ class HotelResortPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Center(
-            child: Text("Nama Aplikasi"),
+            child: Text("Nama Aplikasi",style: TextStyle(color: Colors.black54),),
           ),
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.white,
           bottom: TabBar(
-            indicatorColor: Colors.white,
+            indicatorColor: Colors.green,
             indicatorWeight: 4,
             tabs: [
               Tab(
                 child: Text(
                   "KOTA",
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 16,color: Colors.black),
                 ),
               ),
               Tab(
                 child: Text(
                   "KABUPATEN",
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: 16,color: Colors.black),
                 ),
               ),
             ],

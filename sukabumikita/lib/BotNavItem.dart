@@ -3,7 +3,6 @@ import 'package:sukabumikita/GuideTourPage/GuideTourPage.dart';
 import 'package:sukabumikita/HomePage/HomePage.dart';
 import 'package:sukabumikita/HotelResort/HotelResortPage.dart';
 import 'package:sukabumikita/RestaurantPage/RestaurantPage.dart';
-import 'package:sukabumikita/VacationPage/VacationItem.dart';
 import 'package:sukabumikita/VacationPage/VacationPage.dart';
 
 class BotNavItem extends StatefulWidget {

@@ -7,12 +7,24 @@ class RestaurantPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Center(
+            child: Text(
+          'Nama Aplikasi',
+          style: TextStyle(color: Colors.black54),
+        )),
+        backgroundColor: Colors.white,
+      ),
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.only(top: 15, bottom: 60),
         child: ListView(
-          children: [
-            RestaurantItem(),
-          ],
+          // children: [
+          //   RestaurantItem(),
+          // ],
+          children: List.generate(
+            50,
+            (index) => RestaurantItem(),
+          ),
         ),
       ),
     );
