@@ -16,7 +16,10 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Center(
-          child: Text("Nama Aplikasi",style: TextStyle(color: Colors.black54),),
+          child: Text(
+            "SUKABUMIKITA",
+            style: TextStyle(color: Colors.black54),
+          ),
         ),
       ),
       body: Padding(
@@ -24,6 +27,9 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           children: [
             HomePageItem(),
+            SizedBox(
+              height: 50,
+            )
           ],
         ),
       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sukabumikita/HomePage/ImageViewJaport.dart';
+import 'package:sukabumikita/HomePage/ImageViewPeta.dart';
 
 class HomePageItem extends StatelessWidget {
   const HomePageItem({Key? key}) : super(key: key);
@@ -10,7 +12,7 @@ class HomePageItem extends StatelessWidget {
         Column(
           children: [
             Text(
-              "Peta Tempat",
+              "Peta Sukabumi",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -19,14 +21,29 @@ class HomePageItem extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(10),
-              child: Container(
-                width: 370,
-                height: 370,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Colors.grey[350],
-                  // image: DecorationImage(
-                  //     image: AssetImage('assets/images/azizi.jpeg')),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Peta()));
+                },
+                child: Container(
+                  width: 370,
+                  height: 370,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    color: Colors.grey[350],
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage('images/peta.jpeg')),
+                  ),
                 ),
               ),
             ),
@@ -44,14 +61,29 @@ class HomePageItem extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(10),
-              child: Container(
-                width: 370,
-                height: 370,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  color: Colors.grey[350],
-                  // image: DecorationImage(
-                  //     image: AssetImage('assets/images/azizi.jpeg')),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Japort()));
+                },
+                child: Container(
+                  width: 370,
+                  height: 370,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    color: Colors.grey[350],
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage('images/japort.jpeg')),
+                  ),
                 ),
               ),
             ),

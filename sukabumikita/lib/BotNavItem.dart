@@ -20,7 +20,7 @@ class BotNavItem extends StatefulWidget {
 }
 
 class _BotNavItemState extends State<BotNavItem> {
-  int _currentIndex = 0;
+  int _currentIndex = 2;
   void _onItemTapped(int index) {
     setState(() {
       _currentIndex = index;
