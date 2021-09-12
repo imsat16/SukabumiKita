@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sukabumikita/RestaurantPage/KabupatenPage.dart';
-import 'package:sukabumikita/RestaurantPage/KotaPage.dart';
+import 'package:sukabumikita/RestaurantPage/RestaurantKabupatenPage.dart';
+import 'package:sukabumikita/RestaurantPage/RestaurantKotaPage.dart';
 // import 'package:sukabumikita/RestaurantPage/RestaurantItem.dart';
 
 class RestaurantPage extends StatelessWidget {

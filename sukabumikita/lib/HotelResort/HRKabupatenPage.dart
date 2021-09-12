@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sukabumikita/HotelResort/KabupatenItem.dart';
+import 'package:sukabumikita/HotelResort/HRKabupatenItem.dart';
 
 class KabupatenPage extends StatelessWidget {
   const KabupatenPage({ Key? key }) : super(key: key);

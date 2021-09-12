@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sukabumikita/HotelResort/KabupatenPage.dart';
-import 'package:sukabumikita/HotelResort/KotaPage.dart';
+import 'package:sukabumikita/HotelResort/HRKabupatenPage.dart';
+import 'package:sukabumikita/HotelResort/HRKotaPage.dart';
 
 class HotelResortPage extends StatelessWidget {
   const HotelResortPage({Key? key}) : super(key: key);

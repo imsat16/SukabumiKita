@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:sukabumikita/VacationPage/KabupatenPage.dart';
-import 'package:sukabumikita/VacationPage/KotaPage.dart';
-// import 'package:sukabumikita/VacationPage/VacationItem.dart';
+import 'package:sukabumikita/VacationPage/VKabupatenPage.dart';
+import 'package:sukabumikita/VacationPage/VKotaPage.dart';
 
-class VacationPage extends StatelessWidget {
+class VacationPage extends StatefulWidget {
   const VacationPage({Key? key}) : super(key: key);
 
+  @override
+  _VacationPageState createState() => _VacationPageState();
+}
+
+class _VacationPageState extends State<VacationPage> {
+  
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -38,12 +43,14 @@ class VacationPage extends StatelessWidget {
             ],
           ),
         ),
-        body: TabBarView(
+        body: 
+        TabBarView(
           children: [
-            KotaVaca(),
-            KabupatenVaca(),
+            VKotaPage(),
+            VKabupatenPage(),
           ],
         ),
+        
       ),
     );
   }
