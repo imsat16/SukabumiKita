@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GuideTourItem extends StatelessWidget {
-  const GuideTourItem({Key? key}) : super(key: key);
+  const GuideTourItem({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

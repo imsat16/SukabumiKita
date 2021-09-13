@@ -2,26 +2,23 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
+import 'package:sukabumikita/HotelResort/DetailHotels.dart';
 
 class KotaItem extends StatefulWidget {
-  const KotaItem({Key? key}) : super(key: key);
+  const KotaItem({Key key}) : super(key: key);
 
   @override
   State<KotaItem> createState() => _KotaItemState();
 }
 
 class _KotaItemState extends State<KotaItem> {
-  List _dataHotel = [];
-
-  String kota = "Kota";
+  List _dataHotel = List();
 
   void getData() async {
     final String apiEndpoint =
-        "http://192.168.43.104/WEBSUKABUMIKITA/Pages/hotel/view_api.php";
+        "http://192.168.1.15/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
     final Uri url = Uri.parse(apiEndpoint);
-    var response = await http.post(url, body: {
-      "posisi": kota,
-    });
+    var response = await http.post(url);
     setState(() {
       _dataHotel = json.decode(response.body);
     });
@@ -43,10 +40,25 @@ class _KotaItemState extends State<KotaItem> {
       crossAxisCount: 2,
       children: List.generate(
         _dataHotel == null ? 0 : _dataHotel.length,
-        (index) => Container(
-          padding: const EdgeInsets.all(8),
-          child: Text(_dataHotel[index]['nama']),
-          color: Colors.teal[100],
+        (index) => GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailHotels(
+                          id_hotel: _dataHotel[index]["id_hotel"].toString(),
+                          // nama_hotel: _dataHotel[index]['nama'],
+                        )));
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(_dataHotel[index]['foto']),
+                    fit: BoxFit.fill)),
+            padding: const EdgeInsets.all(8),
+            child: Text(_dataHotel[index]['nama']),
+            // color: Colors.teal[100],
+          ),
         ),
       ),
     );

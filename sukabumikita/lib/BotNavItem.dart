@@ -6,7 +6,7 @@ import 'package:sukabumikita/RestaurantPage/RestaurantPage.dart';
 import 'package:sukabumikita/VacationPage/VacationPage.dart';
 
 class BotNavItem extends StatefulWidget {
-  const BotNavItem({Key? key}) : super(key: key);
+  const BotNavItem({Key key}) : super(key: key);
   static const List<Widget> _widgetOptions = <Widget>[
     HotelResortPage(),
     VacationPage(),

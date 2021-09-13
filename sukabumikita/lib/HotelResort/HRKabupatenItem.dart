@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class KabupatenItem extends StatelessWidget {
-  const KabupatenItem({ Key? key }) : super(key: key);
+  const KabupatenItem({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: GridView.count(
+        child: GridView.count(
       primary: false,
       padding: const EdgeInsets.all(20),
       crossAxisSpacing: 10,
@@ -62,7 +62,6 @@ class KabupatenItem extends StatelessWidget {
           ),
         ),
       ],
-    )
-    );
+    ));
   }
 }

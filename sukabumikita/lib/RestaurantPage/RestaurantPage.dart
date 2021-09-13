@@ -4,7 +4,7 @@ import 'package:sukabumikita/RestaurantPage/RestaurantKotaPage.dart';
 // import 'package:sukabumikita/RestaurantPage/RestaurantItem.dart';
 
 class RestaurantPage extends StatelessWidget {
-  const RestaurantPage({Key? key}) : super(key: key);
+  const RestaurantPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sukabumikita/GuideTourPage/GuideTourItem.dart';
 
 class GuideTourPage extends StatelessWidget {
-  const GuideTourPage({Key? key}) : super(key: key);
+  const GuideTourPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

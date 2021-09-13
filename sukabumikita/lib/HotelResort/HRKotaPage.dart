@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sukabumikita/HotelResort/HRKotaItem.dart';
 
 class KotaPage extends StatefulWidget {
-  const KotaPage({Key? key}) : super(key: key);
+  const KotaPage({Key key}) : super(key: key);
 
   @override
   State<KotaPage> createState() => _KotaPageState();

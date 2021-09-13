@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class VKotaItem extends StatefulWidget {
-  const VKotaItem({Key? key}) : super(key: key);
+  const VKotaItem({Key key}) : super(key: key);
 
   @override
   _VKotaItemState createState() => _VKotaItemState();
@@ -16,7 +16,7 @@ class _VKotaItemState extends State<VKotaItem> {
 
   void getData() async {
     final String apiEndpoint =
-        "http://192.168.43.104/WEBSUKABUMIKITA/Pages/hotel/view_api.php";
+        "http://192.168.1.4/WEBSUKABUMIKITA/Pages/hotel/view_api.php";
     final Uri url = Uri.parse(apiEndpoint);
     var response = await http.post(url, body: {
       "posisi": kota,
@@ -43,10 +43,16 @@ class _VKotaItemState extends State<VKotaItem> {
             crossAxisCount: 2,
             children: List.generate(
               _dataHotel == null ? 0 : _dataHotel.length,
-              (index) => Container(
-                padding: const EdgeInsets.all(8),
-                child: Text(_dataHotel[index]['nama']),
-                color: Colors.teal[100],
+              (index) => GestureDetector(
+                onTap: (){
+              //     Navigator.push(
+              // context, MaterialPageRoute(builder: (context) => ChatPage()));
+              },
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  child: Text(_dataHotel[index]['nama']),
+                  color: Colors.teal[100],
+                ),
               ),
             )));
   }

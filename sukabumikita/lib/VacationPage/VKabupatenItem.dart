@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class VKabupatenItem extends StatefulWidget {
-  const VKabupatenItem({ Key? key }) : super(key: key);
+  const VKabupatenItem({ Key key }) : super(key: key);
 
   @override
   _VKabupatenItemState createState() => _VKabupatenItemState();

@@ -3,7 +3,7 @@ import 'package:sukabumikita/HotelResort/HRKabupatenPage.dart';
 import 'package:sukabumikita/HotelResort/HRKotaPage.dart';
 
 class HotelResortPage extends StatelessWidget {
-  const HotelResortPage({Key? key}) : super(key: key);
+  const HotelResortPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

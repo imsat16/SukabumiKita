@@ -3,7 +3,7 @@ import 'package:sukabumikita/HomePage/ImageViewJaport.dart';
 import 'package:sukabumikita/HomePage/ImageViewPeta.dart';
 
 class HomePageItem extends StatelessWidget {
-  const HomePageItem({Key? key}) : super(key: key);
+  const HomePageItem({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

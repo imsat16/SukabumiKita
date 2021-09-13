@@ -3,7 +3,7 @@ import 'package:sukabumikita/VacationPage/VKabupatenPage.dart';
 import 'package:sukabumikita/VacationPage/VKotaPage.dart';
 
 class VacationPage extends StatefulWidget {
-  const VacationPage({Key? key}) : super(key: key);
+  const VacationPage({Key key}) : super(key: key);
 
   @override
   _VacationPageState createState() => _VacationPageState();
