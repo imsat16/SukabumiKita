@@ -11,6 +11,9 @@ class KotaItem extends StatefulWidget {
   State<KotaItem> createState() => _KotaItemState();
 }
 
+const imgDefault =
+    "https://upload.wikimedia.org/wikipedia/commons/7/75/No_image_available.png";
+
 class _KotaItemState extends State<KotaItem> {
   List _dataHotel = List();
 
@@ -53,7 +56,9 @@ class _KotaItemState extends State<KotaItem> {
           child: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage(_dataHotel[index]['foto']),
+                    image: _dataHotel[index]['foto'] != ""
+                        ? NetworkImage(_dataHotel[index]['foto'])
+                        : NetworkImage(imgDefault),
                     fit: BoxFit.fill)),
             padding: const EdgeInsets.all(8),
             child: Text(_dataHotel[index]['nama']),

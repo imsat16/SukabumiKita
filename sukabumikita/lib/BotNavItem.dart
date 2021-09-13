@@ -8,9 +8,10 @@ import 'package:sukabumikita/VacationPage/VacationPage.dart';
 class BotNavItem extends StatefulWidget {
   const BotNavItem({Key key}) : super(key: key);
   static const List<Widget> _widgetOptions = <Widget>[
+    HomePage(),
     HotelResortPage(),
     VacationPage(),
-    HomePage(),
+    GuideTourPage(),
     GuideTourPage(),
     RestaurantPage()
   ];
@@ -45,6 +46,12 @@ class _BotNavItemState extends State<BotNavItem> {
             onTap: _onItemTapped,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                ),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
                 icon: Icon(Icons.hotel),
                 label: 'Hotel & Resort',
               ),
@@ -54,15 +61,15 @@ class _BotNavItemState extends State<BotNavItem> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.home,
-                ),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
                   Icons.map_outlined,
                 ),
                 label: 'Guide Tour',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.store,
+                ),
+                label: 'UMKM',
               ),
               BottomNavigationBarItem(
                 icon: Icon(
