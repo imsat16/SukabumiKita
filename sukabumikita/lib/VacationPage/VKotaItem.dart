@@ -16,7 +16,8 @@ class _VKotaItemState extends State<VKotaItem> {
 
   void getData() async {
     final String apiEndpoint =
-        "http://192.168.1.4/WEBSUKABUMIKITA/Pages/hotel/view_api.php";
+        // "http://192.168.43.104/WEBSUKABUMIKITA/Pages/hotel/view_api.php";
+        "http://192.168.43.104/WEBSUKABUMIKITA/Pages/hotel/view_api.php";
     final Uri url = Uri.parse(apiEndpoint);
     var response = await http.post(url, body: {
       "posisi": kota,

@@ -17,15 +17,25 @@ const imgDefault =
 class _KotaItemState extends State<KotaItem> {
   List _dataHotel = List();
 
-  void getData() async {
-    final String apiEndpoint =
-        "http://192.168.1.15/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
-    final Uri url = Uri.parse(apiEndpoint);
-    var response = await http.post(url);
+  Future getData() async {
+    Uri url = Uri.parse(
+        "http://192.168.43.104/websukabumikita/pages/hotel/view_api_by_kota.php");
+    final response = await http.get(url);
     setState(() {
       _dataHotel = json.decode(response.body);
     });
   }
+
+  // void getData() async {
+  //   final String apiEndpoint =
+  //       // "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
+  //       "http://192.168.43.104/websukabumikita/pages/hotel/view_api_by_kota.php";
+  //   final Uri url = Uri.parse(apiEndpoint);
+  //   var response = await http.post(url);
+  //   setState(() {
+  //     _dataHotel = json.decode(response.body);
+  //   });
+  // }
 
   @override
   void initState() {

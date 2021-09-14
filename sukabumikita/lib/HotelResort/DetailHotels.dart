@@ -29,7 +29,8 @@ class _DetailHotelsState extends State<DetailHotels> {
 
   void hotelDetail() async {
     final String apiEndpoint =
-        "http://192.168.1.15/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
+        // "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
+        "http://192.168.43.104/websukabumikita/pages/hotel/view_api_by_kota.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
       "id_hotel": widget.id_hotel,
@@ -56,32 +57,110 @@ class _DetailHotelsState extends State<DetailHotels> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('$nama'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('$nama'),
+      // ),
+      // extendBodyBehindAppBar: true,
       body: Builder(builder: (context) {
-        return SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 2,
-              ),
-              Image.network("$foto"),
-              Row(
-                children: [
-                  Container(
-                      decoration: BoxDecoration(color: Colors.teal),
-                      child: Text("$nama")),
-                  SizedBox(
-                    width: 10,
+        return ListView(
+          children: [
+            Stack(
+              children: [
+                Image.network(
+                  '$foto',
+                  width: double.infinity,
+                  height: 250,
+                  fit: BoxFit.cover,
+                ),
+                Positioned(
+                  left: 0.0,
+                  top: 0.0,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey.shade200.withOpacity(0.5)),
+                    child: TextButton(
+                      child: Icon(Icons.arrow_back, color: Colors.black54),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
                   ),
-                  Text("$rating"),
+                ),
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  child: Column(
+                    children: [
+                      Container(
+                        // width: 300,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: <Color>[
+                                Colors.black54,
+                                Colors.black45.withOpacity(0.0),
+                              ], // red to yellow
+                              stops: [
+                                0.0,
+                                0.6
+                              ] // repeats the gradient over the canvas
+                              ),
+                        ),
+                        padding: EdgeInsets.all(8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '$nama Hotel',
+                              style: TextStyle(
+                                  fontSize: 21,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              'Rating $rating',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Column(
+                  children: [],
+                )
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Deskripsi :",
+                    style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    "$deskripsi",
+                    style: TextStyle(fontSize: 17),
+                  ),
                 ],
               ),
-              Text("$deskripsi"),
-              Text("Alamat: $alamat")
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Alamat : $alamat",
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+          ],
         );
       }),
     );
