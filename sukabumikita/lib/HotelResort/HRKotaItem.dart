@@ -66,7 +66,7 @@ class _KotaItemState extends State<KotaItem> {
           child: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: _dataHotel[index]['foto'] != ""
+                    image: _dataHotel[index]['foto'] != ''
                         ? NetworkImage(_dataHotel[index]['foto'])
                         : NetworkImage(imgDefault),
                     fit: BoxFit.fill)),
