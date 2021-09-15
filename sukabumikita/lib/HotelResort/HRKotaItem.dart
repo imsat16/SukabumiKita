@@ -19,7 +19,7 @@ class _KotaItemState extends State<KotaItem> {
 
   Future getData() async {
     Uri url = Uri.parse(
-        "http://192.168.43.104/websukabumikita/pages/hotel/view_api_by_kota.php");
+        "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_kota.php");
     final response = await http.get(url);
     setState(() {
       _dataHotel = json.decode(response.body);

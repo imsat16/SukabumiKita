@@ -3,6 +3,7 @@ import 'package:sukabumikita/GuideTourPage/GuideTourPage.dart';
 import 'package:sukabumikita/HomePage/HomePage.dart';
 import 'package:sukabumikita/HotelResort/HotelResortPage.dart';
 import 'package:sukabumikita/RestaurantPage/RestaurantPage.dart';
+import 'package:sukabumikita/Umkm/UmkmPage.dart';
 import 'package:sukabumikita/VacationPage/VacationPage.dart';
 
 class BotNavItem extends StatefulWidget {
@@ -12,7 +13,7 @@ class BotNavItem extends StatefulWidget {
     HotelResortPage(),
     VacationPage(),
     GuideTourPage(),
-    GuideTourPage(),
+    UmkmPage(),
     RestaurantPage()
   ];
 
@@ -21,7 +22,7 @@ class BotNavItem extends StatefulWidget {
 }
 
 class _BotNavItemState extends State<BotNavItem> {
-  int _currentIndex = 2;
+  int _currentIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
       _currentIndex = index;

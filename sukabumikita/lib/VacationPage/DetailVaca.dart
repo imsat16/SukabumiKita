@@ -3,27 +3,27 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 // import 'package:sukabumikita/models/hotel.dart';
 
-class DetailHotels extends StatefulWidget {
+class DetailVaca extends StatefulWidget {
   // const DetailHotels({Key key}) : super(key: key);
 
-  final String id_hotel;
+  final String id_vaca;
   // final String nama_hotel;
   // final String nama_siswa;
-  DetailHotels({
+  DetailVaca({
     Key key,
-    this.id_hotel,
+    this.id_vaca,
     // this.nama_hotel,
   }) : super(key: key);
 
   @override
-  _DetailHotelsState createState() => _DetailHotelsState();
+  _DetailVacaState createState() => _DetailVacaState();
 }
 
 const imgDefault =
     "https://upload.wikimedia.org/wikipedia/commons/7/75/No_image_available.png";
 
-class _DetailHotelsState extends State<DetailHotels> {
-  String id_hotel = "";
+class _DetailVacaState extends State<DetailVaca> {
+  String id_vaca = "";
   String foto = "";
   String nama = "";
   String deskripsi = "";
@@ -33,15 +33,15 @@ class _DetailHotelsState extends State<DetailHotels> {
   Future hotelDetail() async {
     final String apiEndpoint =
         // "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
-        "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_detail.php";
+        "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_detail.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
-      "id_hotel": widget.id_hotel,
+      "id_wisata": widget.id_vaca,
     });
 
     var data = json.decode(response.body);
     setState(() {
-      id_hotel = data[0]['id_hotel'].toString();
+      id_vaca = data[0]['id_wisata'].toString();
       foto = data[0]['foto'];
       nama = data[0]['nama'];
       deskripsi = data[0]['deskripsi'];

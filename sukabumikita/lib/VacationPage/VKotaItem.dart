@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:sukabumikita/VacationPage/DetailVaca.dart';
 
 class VKotaItem extends StatefulWidget {
   const VKotaItem({Key key}) : super(key: key);
@@ -10,20 +11,14 @@ class VKotaItem extends StatefulWidget {
 }
 
 class _VKotaItemState extends State<VKotaItem> {
-  List _dataHotel = [];
+  List _data = List();
 
-  String kota = "Kota";
-
-  void getData() async {
-    final String apiEndpoint =
-        // "http://192.168.43.104/WEBSUKABUMIKITA/Pages/hotel/view_api.php";
-        "http://192.168.43.104/WEBSUKABUMIKITA/Pages/hotel/view_api.php";
-    final Uri url = Uri.parse(apiEndpoint);
-    var response = await http.post(url, body: {
-      "posisi": kota,
-    });
+  Future getData() async {
+    Uri url = Uri.parse(
+        "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_kota.php");
+    final response = await http.get(url);
     setState(() {
-      _dataHotel = json.decode(response.body);
+      _data = json.decode(response.body);
     });
   }
 
@@ -35,26 +30,37 @@ class _VKotaItemState extends State<VKotaItem> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: GridView.count(
-            primary: false,
-            padding: const EdgeInsets.all(20),
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: 2,
-            children: List.generate(
-              _dataHotel == null ? 0 : _dataHotel.length,
-              (index) => GestureDetector(
-                onTap: (){
-              //     Navigator.push(
-              // context, MaterialPageRoute(builder: (context) => ChatPage()));
-              },
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  child: Text(_dataHotel[index]['nama']),
-                  color: Colors.teal[100],
-                ),
-              ),
-            )));
+    return GridView.count(
+      primary: false,
+      padding: const EdgeInsets.all(20),
+      crossAxisSpacing: 10,
+      mainAxisSpacing: 10,
+      crossAxisCount: 2,
+      children: List.generate(
+        _data == null ? 0 : _data.length,
+        (index) => GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailVaca(
+                          id_vaca: _data[index]["id_wisata"].toString(),
+                          // nama_hotel: _dataHotel[index]['nama'],
+                        )));
+          },
+          child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: _data[index]['foto'] != ''
+                        ? NetworkImage(_data[index]['foto'])
+                        : NetworkImage(imgDefault),
+                    fit: BoxFit.fill)),
+            padding: const EdgeInsets.all(8),
+            child: Text(_data[index]['nama']),
+            // color: Colors.teal[100],
+          ),
+        ),
+      ),
+    );
   }
 }

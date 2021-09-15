@@ -3,27 +3,27 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 // import 'package:sukabumikita/models/hotel.dart';
 
-class DetailHotels extends StatefulWidget {
+class DetailUmkm extends StatefulWidget {
   // const DetailHotels({Key key}) : super(key: key);
 
-  final String id_hotel;
+  final String id_umkm;
   // final String nama_hotel;
   // final String nama_siswa;
-  DetailHotels({
+  DetailUmkm({
     Key key,
-    this.id_hotel,
+    this.id_umkm,
     // this.nama_hotel,
   }) : super(key: key);
 
   @override
-  _DetailHotelsState createState() => _DetailHotelsState();
+  _DetailUmkmState createState() => _DetailUmkmState();
 }
 
 const imgDefault =
     "https://upload.wikimedia.org/wikipedia/commons/7/75/No_image_available.png";
 
-class _DetailHotelsState extends State<DetailHotels> {
-  String id_hotel = "";
+class _DetailUmkmState extends State<DetailUmkm> {
+  String id_umkm = "";
   String foto = "";
   String nama = "";
   String deskripsi = "";
@@ -33,15 +33,15 @@ class _DetailHotelsState extends State<DetailHotels> {
   Future hotelDetail() async {
     final String apiEndpoint =
         // "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
-        "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_detail.php";
+        "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_umkm_detail.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
-      "id_hotel": widget.id_hotel,
+      "id_umkm": widget.id_umkm,
     });
 
     var data = json.decode(response.body);
     setState(() {
-      id_hotel = data[0]['id_hotel'].toString();
+      id_umkm = data[0]['id_umkm'].toString();
       foto = data[0]['foto'];
       nama = data[0]['nama'];
       deskripsi = data[0]['deskripsi'];
@@ -122,7 +122,7 @@ class _DetailHotelsState extends State<DetailHotels> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              '$nama Hotel',
+                              '$nama',
                               style: TextStyle(
                                   fontSize: 21,
                                   fontWeight: FontWeight.w500,
