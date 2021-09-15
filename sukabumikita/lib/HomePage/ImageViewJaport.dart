@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:photo_view/photo_view.dart';
 
@@ -11,9 +12,12 @@ class Japort extends StatefulWidget {
 class _JaportState extends State<Japort> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: PhotoView(
-      imageProvider: AssetImage("images/japort.jpeg"),
-    ));
+    return Scaffold(
+      appBar: AppBar(backgroundColor: Colors.green,),
+      body: Container(
+          child: PhotoView(
+        imageProvider: AssetImage("images/japort.jpeg"),
+      )),
+    );
   }
 }

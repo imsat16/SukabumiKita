@@ -12,7 +12,10 @@ class _VKotaPageState extends State<VKotaPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: VKotaItem(),
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 60),
+        child: VKotaItem(),
+      ),
     );
   }
 }

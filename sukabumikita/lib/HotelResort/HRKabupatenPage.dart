@@ -7,7 +7,10 @@ class KabupatenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: KabupatenItem(),
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 60),
+        child: KabupatenItem(),
+      ),
     );
   }
 }

@@ -32,8 +32,8 @@ class _DetailRestoState extends State<DetailResto> {
 
   Future hotelDetail() async {
     final String apiEndpoint =
-        // "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
-        "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_detail.php";
+        // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_detail.php";
+        "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_detail.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
       "id_resto": widget.id_resto,

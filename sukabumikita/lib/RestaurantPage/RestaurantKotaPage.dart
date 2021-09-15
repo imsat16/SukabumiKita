@@ -8,7 +8,10 @@ class KotaResto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: KotaRestoItem(),
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 60),
+        child: KotaRestoItem(),
+      ),
     );
   }
 }

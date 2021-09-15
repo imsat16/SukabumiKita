@@ -8,7 +8,10 @@ class KabupatenResto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: KabupatenRestoItem(),
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 60),
+        child: KabupatenRestoItem(),
+      ),
     );
   }
 }

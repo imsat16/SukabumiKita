@@ -15,7 +15,8 @@ class _VKabupatenItemState extends State<VKabupatenItem> {
 
   Future getData() async {
     Uri url = Uri.parse(
-        "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_kota.php");
+        // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_kota.php");
+        "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_kota.php");
     final response = await http.get(url);
     setState(() {
       _data = json.decode(response.body);
@@ -50,6 +51,7 @@ class _VKabupatenItemState extends State<VKabupatenItem> {
           },
           child: Container(
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
                 image: DecorationImage(
                     image: _data[index]['foto'] != ''
                         ? NetworkImage(_data[index]['foto'])

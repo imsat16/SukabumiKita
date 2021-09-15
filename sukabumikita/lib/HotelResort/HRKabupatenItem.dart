@@ -19,7 +19,8 @@ class _KabupatenItemState extends State<KabupatenItem> {
 
   Future getData() async {
     Uri url = Uri.parse(
-        "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_kabupaten.php");
+        // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_kabupaten.php",
+        "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_kabupaten.php");
     final response = await http.get(url);
     setState(() {
       _dataHotel = json.decode(response.body);
@@ -54,13 +55,42 @@ class _KabupatenItemState extends State<KabupatenItem> {
           },
           child: Container(
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: _dataHotel[index]['foto'] != ''
-                        ? NetworkImage(_dataHotel[index]['foto'])
-                        : NetworkImage(imgDefault),
-                    fit: BoxFit.fill)),
-            padding: const EdgeInsets.all(8),
-            child: Text(_dataHotel[index]['nama']),
+              borderRadius: BorderRadius.circular(15),
+              image: DecorationImage(
+                  image: _dataHotel[index]['foto'] != ''
+                      ? NetworkImage(_dataHotel[index]['foto'])
+                      : NetworkImage(imgDefault),
+                  fit: BoxFit.fill),
+            ),
+            child: Stack(
+              children: [
+                Positioned(
+                  bottom: 0,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                      ),
+                      gradient: LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          colors: <Color>[
+                            Colors.white,
+                            Colors.white.withOpacity(0.5)
+                          ], // red to yellow
+                          stops: [
+                            0.0,
+                            0.6
+                          ] // repeats the gradient over the canvas
+                          ),
+                    ),
+                    child: Text(
+                      _dataHotel[index]['nama'],style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
+              ],
+            ),
             // color: Colors.teal[100],
           ),
         ),
