@@ -20,7 +20,7 @@ class _KotaItemState extends State<KotaItem> {
   Future getData() async {
     Uri url = Uri.parse(
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_kota.php"
-        "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_kota.php");
+        "http://192.168.1.8/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_kota.php");
     final response = await http.get(url);
     setState(() {
       _dataHotel = json.decode(response.body);
@@ -29,8 +29,8 @@ class _KotaItemState extends State<KotaItem> {
 
   // void getData() async {
   //   final String apiEndpoint =
-  //       // "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
-  //       "http://192.168.43.104/websukabumikita/pages/hotel/view_api_by_kota.php";
+  //       // "http://192.168.1.8/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
+  //       "http://192.168.1.8/websukabumikita/pages/hotel/view_api_by_kota.php";
   //   final Uri url = Uri.parse(apiEndpoint);
   //   var response = await http.post(url);
   //   setState(() {
@@ -77,7 +77,7 @@ class _KotaItemState extends State<KotaItem> {
                 Positioned(
                   bottom: 0,
                   child: Container(
-                  padding: EdgeInsets.only(left: 2, right: 3),
+                    padding: EdgeInsets.only(left: 2, right: 3),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20),

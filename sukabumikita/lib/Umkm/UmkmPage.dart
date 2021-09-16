@@ -12,7 +12,6 @@ class UmkmPage extends StatefulWidget {
 }
 
 class _UmkmPageState extends State<UmkmPage> {
-  
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -21,8 +20,8 @@ class _UmkmPageState extends State<UmkmPage> {
         appBar: AppBar(
           title: Center(
             child: Text(
-              "Nama Aplikasi",
-              style: TextStyle(color: Colors.black54),
+              "Sukabumi Kita",
+              style: TextStyle(color: Colors.green),
             ),
           ),
           backgroundColor: Colors.white,
@@ -45,14 +44,12 @@ class _UmkmPageState extends State<UmkmPage> {
             ],
           ),
         ),
-        body: 
-        TabBarView(
+        body: TabBarView(
           children: [
             UmkmKotaPage(),
             UmkmKabPage(),
           ],
         ),
-        
       ),
     );
   }

@@ -16,7 +16,7 @@ class _VKabupatenItemState extends State<VKabupatenItem> {
   Future getData() async {
     Uri url = Uri.parse(
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_kota.php");
-        "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_kota.php");
+        "http://192.168.1.8/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_kabupaten.php");
     final response = await http.get(url);
     setState(() {
       _data = json.decode(response.body);
@@ -51,14 +51,44 @@ class _VKabupatenItemState extends State<VKabupatenItem> {
           },
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(15),
                 image: DecorationImage(
                     image: _data[index]['foto'] != ''
                         ? NetworkImage(_data[index]['foto'])
                         : NetworkImage(imgDefault),
                     fit: BoxFit.fill)),
-            padding: const EdgeInsets.all(8),
-            child: Text(_data[index]['nama']),
+            child: Stack(
+              children: [
+                Positioned(
+                  bottom: 0,
+                  child: Container(
+                    padding: EdgeInsets.only(left: 2, right: 3),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                      ),
+                      gradient: LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          colors: <Color>[
+                            Colors.white,
+                            Colors.white.withOpacity(0.5)
+                          ], // red to yellow
+                          stops: [
+                            0.0,
+                            0.6
+                          ] // repeats the gradient over the canvas
+                          ),
+                    ),
+                    child: Text(
+                      _data[index]['nama'],
+                      style:
+                          TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                    ),
+                  ),
+                ),
+              ],
+            ),
             // color: Colors.teal[100],
           ),
         ),

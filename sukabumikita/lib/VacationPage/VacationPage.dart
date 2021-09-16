@@ -10,7 +10,6 @@ class VacationPage extends StatefulWidget {
 }
 
 class _VacationPageState extends State<VacationPage> {
-  
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -19,8 +18,8 @@ class _VacationPageState extends State<VacationPage> {
         appBar: AppBar(
           title: Center(
             child: Text(
-              "Nama Aplikasi",
-              style: TextStyle(color: Colors.black54),
+              "Sukabumi Kita",
+              style: TextStyle(color: Colors.green),
             ),
           ),
           backgroundColor: Colors.white,
@@ -43,14 +42,12 @@ class _VacationPageState extends State<VacationPage> {
             ],
           ),
         ),
-        body: 
-        TabBarView(
+        body: TabBarView(
           children: [
             VKotaPage(),
             VKabupatenPage(),
           ],
         ),
-        
       ),
     );
   }

@@ -21,7 +21,7 @@ class _KotaRestoItemState extends State<KotaRestoItem> {
   Future getData() async {
     Uri url = Uri.parse(
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_kota.php");
-        "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_kota.php");
+        "http://192.168.1.8/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_kota.php");
     final response = await http.get(url);
     setState(() {
       _data = json.decode(response.body);
@@ -44,10 +44,12 @@ class _KotaRestoItemState extends State<KotaRestoItem> {
             primary: Colors.transparent, shadowColor: Colors.transparent),
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => DetailResto(
-                          id_resto: _data[index]["id_resto"].toString(),
-                          // nama_hotel: _dataHotel[index]['nama'],
-                        )));
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DetailResto(
+                        id_resto: _data[index]["id_resto"].toString(),
+                        // nama_hotel: _dataHotel[index]['nama'],
+                      )));
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),

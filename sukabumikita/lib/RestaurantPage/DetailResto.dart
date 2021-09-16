@@ -28,12 +28,15 @@ class _DetailRestoState extends State<DetailResto> {
   String nama = "";
   String deskripsi = "";
   String alamat = "";
+  String no_telp = "";
+  String jam_buka = "";
+  String jam_tutup = "";
   String rating = "";
 
   Future hotelDetail() async {
     final String apiEndpoint =
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_detail.php";
-        "http://192.168.43.104/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_detail.php";
+        "http://192.168.1.8/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_detail.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
       "id_resto": widget.id_resto,
@@ -46,6 +49,9 @@ class _DetailRestoState extends State<DetailResto> {
       nama = data[0]['nama'];
       deskripsi = data[0]['deskripsi'];
       alamat = data[0]['alamat'];
+      no_telp = data[0]['no_telp'];
+      jam_buka = data[0]['jam_buka'];
+      jam_tutup = data[0]['jam_tutup'];
       rating = data[0]['rating'];
     });
   }
@@ -167,6 +173,27 @@ class _DetailRestoState extends State<DetailResto> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 "Alamat : $alamat",
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Contact : -$no_telp",
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Jam Buka : -$jam_buka",
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Jam Tutup : -$jam_tutup",
                 style: TextStyle(fontSize: 18),
               ),
             ),

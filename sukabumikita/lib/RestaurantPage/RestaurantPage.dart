@@ -14,8 +14,8 @@ class RestaurantPage extends StatelessWidget {
         appBar: AppBar(
           title: Center(
             child: Text(
-              "Nama Aplikasi",
-              style: TextStyle(color: Colors.black54),
+              "Sukabumi Kita",
+              style: TextStyle(color: Colors.green),
             ),
           ),
           backgroundColor: Colors.white,
