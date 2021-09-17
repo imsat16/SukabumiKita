@@ -36,7 +36,7 @@ class _DetailHotelsState extends State<DetailHotels> {
   Future hotelDetail() async {
     final String apiEndpoint =
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_detail.php";
-        "http://192.168.1.8/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_detail.php";
+        "https://sukabumikita.000webhostapp.com//api/api_hotel_detail.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
       "id_hotel": widget.id_hotel,
@@ -186,14 +186,7 @@ class _DetailHotelsState extends State<DetailHotels> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Jam Buka : -$jam_buka",
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Jam Tutup : -$jam_tutup",
+                "Jam Buka : $jam_buka - $jam_tutup",
                 style: TextStyle(fontSize: 18),
               ),
             ),

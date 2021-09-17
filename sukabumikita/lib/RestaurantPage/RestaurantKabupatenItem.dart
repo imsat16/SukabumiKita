@@ -16,7 +16,7 @@ class _KabupatenRestoItemState extends State<KabupatenRestoItem> {
   Future getData() async {
     Uri url = Uri.parse(
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_kabupaten.php");
-        "http://192.168.1.8/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_resto_kabupaten.php");
+        "https://sukabumikita.000webhostapp.com//api/api_resto_kabupaten.php");
     final response = await http.get(url);
     setState(() {
       _dataHotel = json.decode(response.body);

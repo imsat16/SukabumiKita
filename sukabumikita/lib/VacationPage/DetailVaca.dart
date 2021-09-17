@@ -36,7 +36,7 @@ class _DetailVacaState extends State<DetailVaca> {
   Future hotelDetail() async {
     final String apiEndpoint =
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_detail.php";
-        "http://192.168.1.8/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_detail.php";
+        "https://sukabumikita.000webhostapp.com//api/api_wisata_detail.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
       "id_wisata": widget.id_vaca,
@@ -186,14 +186,7 @@ class _DetailVacaState extends State<DetailVaca> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Jam Buka : -$jam_buka",
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Jam Tutup : -$jam_tutup",
+                "Jam Buka : $jam_buka - $jam_tutup",
                 style: TextStyle(fontSize: 18),
               ),
             ),
