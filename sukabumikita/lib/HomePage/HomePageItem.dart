@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sukabumikita/HomePage/HomeMenu.dart';
 import 'package:sukabumikita/HomePage/ImageViewJaport.dart';
 import 'package:sukabumikita/HomePage/ImageViewPeta.dart';
 
@@ -9,6 +10,7 @@ class HomePageItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        HomeMenu(),
         Column(
           children: [
             Text(

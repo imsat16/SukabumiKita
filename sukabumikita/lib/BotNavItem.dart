@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sukabumikita/GuideTourPage/GuideTourPage.dart';
+import 'package:sukabumikita/Guide/GuideTourPage.dart';
 import 'package:sukabumikita/HomePage/HomePage.dart';
 import 'package:sukabumikita/HotelResort/HotelResortPage.dart';
 import 'package:sukabumikita/RestaurantPage/RestaurantPage.dart';
@@ -9,12 +9,12 @@ import 'package:sukabumikita/VacationPage/VacationPage.dart';
 class BotNavItem extends StatefulWidget {
   const BotNavItem({Key key}) : super(key: key);
   static const List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
     HotelResortPage(),
+    HomePage(),
     VacationPage(),
-    GuideTourPage(),
-    UmkmPage(),
-    RestaurantPage()
+    // GuideTourPage(),
+    // UmkmPage(),
+    // RestaurantPage()
   ];
 
   @override
@@ -22,7 +22,7 @@ class BotNavItem extends StatefulWidget {
 }
 
 class _BotNavItemState extends State<BotNavItem> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   void _onItemTapped(int index) {
     setState(() {
       _currentIndex = index;
@@ -46,6 +46,11 @@ class _BotNavItemState extends State<BotNavItem> {
             currentIndex: _currentIndex,
             onTap: _onItemTapped,
             items: const <BottomNavigationBarItem>[
+              
+              BottomNavigationBarItem(
+                icon: Icon(Icons.hotel),
+                label: 'Hotel & Resort',
+              ),
               BottomNavigationBarItem(
                 icon: Icon(
                   Icons.home,
@@ -53,31 +58,27 @@ class _BotNavItemState extends State<BotNavItem> {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.hotel),
-                label: 'Hotel & Resort',
-              ),
-              BottomNavigationBarItem(
                 icon: Icon(Icons.near_me),
                 label: 'Vacation',
               ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.map_outlined,
-                ),
-                label: 'Guide Tour',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.store,
-                ),
-                label: 'UMKM',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.restaurant_menu,
-                ),
-                label: 'Restaurant',
-              ),
+              // BottomNavigationBarItem(
+              //   icon: Icon(
+              //     Icons.map_outlined,
+              //   ),
+              //   label: 'Guide Tour',
+              // ),
+              // BottomNavigationBarItem(
+              //   icon: Icon(
+              //     Icons.store,
+              //   ),
+              //   label: 'UMKM',
+              // ),
+              // BottomNavigationBarItem(
+              //   icon: Icon(
+              //     Icons.restaurant_menu,
+              //   ),
+              //   label: 'Restaurant',
+              // ),
             ],
           ),
         ),

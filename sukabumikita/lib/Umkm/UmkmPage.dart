@@ -18,11 +18,21 @@ class _UmkmPageState extends State<UmkmPage> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Center(
-            child: Text(
-              "Sukabumi Kita",
-              style: TextStyle(color: Colors.green),
-            ),
+          iconTheme: IconThemeData(
+            color: Colors.black, //change your color here
+          ),
+          centerTitle: true,
+          leading: IconButton(
+            // 1
+            icon: Icon(Icons.arrow_back_ios),
+            color: Colors.black,
+            onPressed: () {
+              Navigator.of(context).maybePop();
+            },
+          ),
+          title: Text(
+            "UMKM",
+            style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w700),
           ),
           backgroundColor: Colors.white,
           bottom: TabBar(

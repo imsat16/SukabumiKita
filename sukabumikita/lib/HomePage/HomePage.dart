@@ -14,14 +14,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Center(
-          child: Text(
-            "SUKABUMIKITA",
-            style: TextStyle(color: Colors.black54),
-          ),
-        ),
-      ),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          title: Image.asset(
+            'images/logo.png',
+            width: 100,
+          )),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(

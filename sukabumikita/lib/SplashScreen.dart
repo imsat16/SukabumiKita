@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Container(
         color: Colors.white,
         child: Image.asset(
-          "images/splash.png",
+          "images/logo.png",
           // scale: MediaQuery.of(context).size.height
         ));
   }
