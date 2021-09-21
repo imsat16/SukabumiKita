@@ -24,7 +24,7 @@ class _BookPageState extends State<BookPage> {
           },
         ),
         title: Text(
-          "RESTAURANT",
+          "BOOK",
           style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w700),
         ),
         backgroundColor: Colors.white,

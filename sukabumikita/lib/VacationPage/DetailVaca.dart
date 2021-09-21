@@ -36,7 +36,7 @@ class _DetailVacaState extends State<DetailVaca> {
   Future hotelDetail() async {
     final String apiEndpoint =
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_detail.php";
-        "https://sukabumikita.000webhostapp.com//api/api_wisata_detail.php";
+        "http://192.168.43.234/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_wisata_detail.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
       "id_wisata": widget.id_vaca,

@@ -20,7 +20,7 @@ class _KotaItemState extends State<KotaItem> {
   Future getData() async {
     Uri url = Uri.parse(
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_kota.php"
-        "https://sukabumikita.000webhostapp.com//api/api_hotel_kota.php");
+        "http://192.168.43.234/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_hotel_kota.php");
     final response = await http.get(url);
     setState(() {
       _dataHotel = json.decode(response.body);
@@ -29,7 +29,7 @@ class _KotaItemState extends State<KotaItem> {
 
   // void getData() async {
   //   final String apiEndpoint =
-  //       // "https://sukabumikita.000webhostapp.com//Pages/hotel/view_api_by_kota.php";
+  //       // "http://192.168.43.234/WEBSUKABUMIKITA/WEBSUKABUMIKITA/Pages/hotel/view_api_by_kota.php";
   //       "http://192.168.1.8/websukabumikita/pages/hotel/view_api_by_kota.php";
   //   final Uri url = Uri.parse(apiEndpoint);
   //   var response = await http.post(url);
