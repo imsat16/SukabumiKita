@@ -17,9 +17,9 @@ class _VacationPageState extends State<VacationPage> {
       child: Scaffold(
         appBar: AppBar(
           title: Center(
-            child: Text(
-              "Sukabumi Kita",
-              style: TextStyle(color: Colors.green),
+            child: Image.asset(
+              'images/logo.png',
+              width: 100,
             ),
           ),
           backgroundColor: Colors.white,
