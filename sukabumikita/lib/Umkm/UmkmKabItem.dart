@@ -16,7 +16,7 @@ class _UmkmKabItemState extends State<UmkmKabItem> {
   Future getData() async {
     Uri url = Uri.parse(
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_umkm_kota.php");
-        "http://192.168.43.234/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_umkm_kabupaten.php");
+        "http://sukabumikita.my.id/api/api_umkm_kabupaten.php");
     final response = await http.get(url);
     setState(() {
       _data = json.decode(response.body);

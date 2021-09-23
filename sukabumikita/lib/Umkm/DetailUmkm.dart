@@ -36,7 +36,7 @@ class _DetailUmkmState extends State<DetailUmkm> {
   Future hotelDetail() async {
     final String apiEndpoint =
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_umkm_detail.php";
-        "http://192.168.43.234/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_umkm_detail.php";
+        "http://sukabumikita.my.id/api/api_umkm_detail.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
       "id_umkm": widget.id_umkm,

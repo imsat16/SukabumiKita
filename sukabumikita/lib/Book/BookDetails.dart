@@ -31,7 +31,7 @@ class _BookDetailsState extends State<BookDetails> {
   Future bookDetail() async {
     final String apiEndpoint =
         // "http://192.168.1.10/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_book_detail.php";
-        "http://192.168.43.234/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_book_detail.php";
+        "http://sukabumikita.my.id/WEBSUKABUMIKITA/WEBSUKABUMIKITA/api/api_book_detail.php";
     Uri url = Uri.parse(apiEndpoint);
     final response = await http.post(url, body: {
       "id_book": widget.id_book,
